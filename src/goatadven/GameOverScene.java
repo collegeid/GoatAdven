@@ -19,7 +19,7 @@ public class GameOverScene {
         StackPane root = new StackPane();
 
         // Background
-        Image bgImage = new Image("file:resources/assets/bg/bg1.png", screenWidth, screenHeight, false, true);
+        Image bgImage = new Image("file:resources/assets/bg/gameplay.png", screenWidth, screenHeight, false, true);
         BackgroundImage bg = new BackgroundImage(
             bgImage,
             BackgroundRepeat.NO_REPEAT,
@@ -39,16 +39,48 @@ public class GameOverScene {
 
         Button retryBtn = new Button("🔁 Coba Lagi");
         retryBtn.setFont(Font.font("Arial", 22));
-        retryBtn.setStyle(
-            "-fx-background-color: rgba(0,0,0,0.6); -fx-text-fill: white; -fx-background-radius: 15; -fx-padding: 10 20;"
+         retryBtn.setStyle(
+            "-fx-background-color: rgba(0,0,0,0.6); " +
+            "-fx-text-fill: white; " +
+            "-fx-background-radius: 20; " +
+            "-fx-padding: 10 25;"
         );
-        retryBtn.setOnAction(e -> GameScene.show(stage));
+        retryBtn.setOnMouseEntered(e -> retryBtn.setStyle(
+            "-fx-background-color: rgba(255,255,255,0.2); " +
+            "-fx-text-fill: white; " +
+            "-fx-background-radius: 20; " +
+            "-fx-padding: 10 25; " +
+            "-fx-cursor: hand;"
+        ));
+        retryBtn.setOnMouseExited(e -> retryBtn.setStyle(
+            "-fx-background-color: rgba(0,0,0,0.6); " +
+            "-fx-text-fill: white; " +
+            "-fx-background-radius: 20; " +
+            "-fx-padding: 10 25;"
+        ));
+        retryBtn.setOnAction(e -> new GameScene().show(stage));
 
         Button menuBtn = new Button("🏠 Kembali ke Menu");
         menuBtn.setFont(Font.font("Arial", 22));
-        menuBtn.setStyle(
-            "-fx-background-color: rgba(0,0,0,0.6); -fx-text-fill: white; -fx-background-radius: 15; -fx-padding: 10 20;"
+         menuBtn.setStyle(
+            "-fx-background-color: rgba(0,0,0,0.6); " +
+            "-fx-text-fill: white; " +
+            "-fx-background-radius: 20; " +
+            "-fx-padding: 10 25;"
         );
+        menuBtn.setOnMouseEntered(e -> menuBtn.setStyle(
+            "-fx-background-color: rgba(255,255,255,0.2); " +
+            "-fx-text-fill: white; " +
+            "-fx-background-radius: 20; " +
+            "-fx-padding: 10 25; " +
+            "-fx-cursor: hand;"
+        ));
+        menuBtn.setOnMouseExited(e -> menuBtn.setStyle(
+            "-fx-background-color: rgba(0,0,0,0.6); " +
+            "-fx-text-fill: white; " +
+            "-fx-background-radius: 20; " +
+            "-fx-padding: 10 25;"
+        ));
         menuBtn.setOnAction(e -> MainMenuScene.show(stage));
 
         VBox content = new VBox(30, gameOverText, scoreText, retryBtn, menuBtn);

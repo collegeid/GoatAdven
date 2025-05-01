@@ -21,7 +21,7 @@ public class MainMenuScene extends Application {
         StackPane root = new StackPane();
 
         // Background
-        Image bgImage = new Image("file:resources/assets/bg/bg1.png");
+        Image bgImage = new Image("file:resources/assets/bg/bg_2.png");
         BackgroundImage bg = new BackgroundImage(
             bgImage,
             BackgroundRepeat.NO_REPEAT,
@@ -41,7 +41,7 @@ public class MainMenuScene extends Application {
         Button exitBtn = createStyledButton("Exit");
 
         // Aksi tombol
-        startBtn.setOnAction(e -> GameScene.show(stage));
+        startBtn.setOnAction(e -> new GameScene().show(stage));
         helpBtn.setOnAction(e -> PetunjukScene.show(stage));
         exitBtn.setOnAction(e -> stage.close());
 
