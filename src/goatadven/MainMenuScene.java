@@ -41,7 +41,7 @@ public class MainMenuScene extends Application {
         Button exitBtn = createStyledButton("Exit");
 
         // Aksi tombol
-        startBtn.setOnAction(e -> System.out.println("Start Game diklik."));
+        startBtn.setOnAction(e -> GameScene.show(stage));
         helpBtn.setOnAction(e -> PetunjukScene.show(stage));
         exitBtn.setOnAction(e -> stage.close());
 
